@@ -41,7 +41,7 @@ st.header("Heart Attack Prediction App")
 weight = st.number_input("Weight", min_value=0, max_value=1000, value=1)
 
 # Input bar 2
-sleeptime = st.number_input("How many hours do you sleep?", min_value=0, max_value=24)
+sleeptime = st.number_input("How many hours do you sleep?", min_value=0, max_value=24, value=1)
 
 # Dropdown input
 diabetes = st.selectbox("Do you have diabetes?", (0, 1, 2), format_func=lambda x: diabetes_options.get(x))
