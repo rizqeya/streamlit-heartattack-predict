@@ -38,7 +38,7 @@ checkup_options = {
 st.header("Heart Attack Prediction App")
 
 # Input bar 1
-weight = st.number_input("Weight", min_value=0, max_value=1000)
+weight = st.number_input("Weight", min_value=0, max_value=1000, value=1)
 
 # Input bar 2
 sleeptime = st.number_input("How many hours do you sleep?", min_value=0, max_value=24)
