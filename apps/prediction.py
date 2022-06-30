@@ -38,7 +38,7 @@ def app():
 
 # Title
  st.header("Heart Attack Prediction")
- st.subheader("Please fill this form..")
+ st.subheader("Please fill complete the form below")
 
 
 # Input bar 1
