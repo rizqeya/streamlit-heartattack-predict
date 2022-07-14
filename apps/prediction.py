@@ -51,7 +51,7 @@ def app():
  diabetes = st.selectbox("Do you have diabetes?", (0, 1, 2), format_func=lambda x: diabetes_options.get(x))
  exercise = st.selectbox("Do you Exercise regularly?", (0, 1), format_func=lambda x: binary_options.get(x))
  smoker = st.selectbox("Do you Smoke regularly?", (0, 1), format_func=lambda x: binary_options.get(x))
- bmi = st.selectbox("Do you Obese?", (0, 1), format_func=lambda x: binary_options.get(x))
+ bmi = st.selectbox("Are you Obese?", (0, 1), format_func=lambda x: binary_options.get(x))
  heavydrinker = st.selectbox("Are you a heavy drinker?", (0, 1), format_func=lambda x: binary_options.get(x))
  income = st.selectbox("How much is your income annualy?", (0, 1, 2, 3, 4), format_func=lambda x: income_options.get(x))
  bingedrinker = st.selectbox("Are you a binge drinker?", (0, 1), format_func=lambda x: binary_options.get(x))
@@ -63,7 +63,6 @@ def app():
 
  
  input_df = pd.DataFrame([input_dict])
- print(type(input_dict))
 
 # If button is pressed
  if st.button("Submit"):
@@ -72,11 +71,7 @@ def app():
     clf = joblib.load("clf.pkl")
     
     prediction = clf.predict(input_df)
-    if prediction == 1:
-        prediction = "Berisiko"
-    else :
-        prediction = "Normal"
-    st.subheader(f"Prediksi risiko serangan jantung yaitu {prediction}")
+    st.subheader("The percentage of the risk of heart attack is " + str(round(prediction.item()*100)) + "%")
 
 
 
